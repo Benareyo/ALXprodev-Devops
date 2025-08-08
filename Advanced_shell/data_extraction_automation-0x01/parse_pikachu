@@ -1,4 +1,4 @@
 #!/bin/bash
 jq -r '
   "\(.name) is of type \(.types[0].type.name), weighs \(.weight / 10)kg, and is \(.height / 10)m tall."
-' pikachu.json | sed 's/\b\(.\)/\u\1/g'
+' pikachu.json | sed 's/^./\u&/; s/\belectric\b/Electric/'
